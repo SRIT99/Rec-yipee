@@ -62,5 +62,47 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.51.1")
     ksp("com.google.dagger:hilt-android-compiler:2.51.1")
     ksp("androidx.room:room-compiler:2.5.0")
+    implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
+    //testing
+    testImplementation("androidx.annotation:annotation:1.9.1")
+    testImplementation("androidx.text.ext:junit-ktx:1.5.0")
+    implementation("androidx.test.ext:junit:1.2.1")
+
+// Required -- JUnit 4 framework
+    testImplementation("junit:junit:$4.13.2")
+    // Optional -- Robolectric environment
+    testImplementation ("androidx.test:core:1.15.0")
+    // Optional -- Mockito framework
+    testImplementation ("org.mockito:mockito-core:2.24.5")
+    // Optional -- mockito-kotlin
+    testImplementation ("org.mockito.kotlin:mockito-kotlin:2.24.5")
+    // Optional -- Mockk framework
+    testImplementation ("io.mockk:mockk:1.13.17")
+    androidTestImplementation ("io.mockk:mockk-android:1.13.7")
+
+    //lifecycle
+    val lifecycle_version = "2.8.7"
+    val arch_version = "2.2.0"
+
+    // ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    // ViewModel utilities for Compose
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
+    // LiveData
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+    // Lifecycle utilities for Compose
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:$lifecycle_version")
+
+    // Saved state module for ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version")
+
+//Room
+    val room_version = "2.6.1"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    ksp("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+
+
 
 }
