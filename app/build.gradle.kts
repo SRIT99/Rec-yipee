@@ -102,7 +102,24 @@ dependencies {
     implementation("androidx.room:room-runtime:$room_version")
     ksp("androidx.room:room-compiler:$room_version")
     implementation("androidx.room:room-ktx:$room_version")
+//networking
+    // Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+// GSON Converter
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+// Kotlin Coroutines
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.1")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
+    //serialization
+    implementation("androidx.navigation:navigation-compose:2.8.8")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0")
 
+//expo player with media
+    implementation("androidx.media3:media3-exoplayer:1.5.1")
+    implementation("androidx.media3:media3-ui:1.5.1")
+    implementation("androidx.media3:media3-common:1.5.1")
 
+    //youtube video player
+    implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.1")
 
 }
