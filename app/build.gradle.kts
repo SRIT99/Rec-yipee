@@ -59,67 +59,65 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     //added dependencies
-    implementation("com.google.dagger:hilt-android:2.51.1")
-    ksp("com.google.dagger:hilt-android-compiler:2.51.1")
-    ksp("androidx.room:room-compiler:2.5.0")
-    implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.hilt.navigation.fragment)
     //testing
-    testImplementation("androidx.annotation:annotation:1.9.1")
-    testImplementation("androidx.text.ext:junit-ktx:1.5.0")
-    implementation("androidx.test.ext:junit:1.2.1")
+    testImplementation(libs.androidx.annotation)
+    testImplementation(libs.androidx.junit.ktx)
+    implementation(libs.androidx.junit)
 
 // Required -- JUnit 4 framework
-    testImplementation("junit:junit:$4.13.2")
+    testImplementation(libs.junit)
     // Optional -- Robolectric environment
-    testImplementation ("androidx.test:core:1.15.0")
+    testImplementation (libs.androidx.core)
     // Optional -- Mockito framework
-    testImplementation ("org.mockito:mockito-core:2.24.5")
+    testImplementation (libs.mockito.core)
     // Optional -- mockito-kotlin
-    testImplementation ("org.mockito.kotlin:mockito-kotlin:2.24.5")
+    testImplementation (libs.mockito.kotlin)
     // Optional -- Mockk framework
-    testImplementation ("io.mockk:mockk:1.13.17")
-    androidTestImplementation ("io.mockk:mockk-android:1.13.7")
+    testImplementation (libs.mockk)
+    androidTestImplementation (libs.mockk.android)
 
     //lifecycle
-    val lifecycle_version = "2.8.7"
-    val arch_version = "2.2.0"
+
+
 
     // ViewModel
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
     // ViewModel utilities for Compose
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
     // LiveData
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+    implementation(libs.androidx.lifecycle.livedata.ktx)
     // Lifecycle utilities for Compose
-    implementation("androidx.lifecycle:lifecycle-runtime-compose:$lifecycle_version")
+    implementation(libs.androidx.lifecycle.runtime.compose)
 
     // Saved state module for ViewModel
-    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version")
+    implementation(libs.androidx.lifecycle.viewmodel.savedstate)
 
 //Room
-    val room_version = "2.6.1"
-
-    implementation("androidx.room:room-runtime:$room_version")
-    ksp("androidx.room:room-compiler:$room_version")
-    implementation("androidx.room:room-ktx:$room_version")
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
 //networking
     // Retrofit
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation (libs.retrofit)
 // GSON Converter
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation (libs.converter.gson)
 // Kotlin Coroutines
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.1")
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
+    implementation (libs.kotlinx.coroutines.android)
+    implementation (libs.kotlinx.coroutines.core)
     //serialization
-    implementation("androidx.navigation:navigation-compose:2.8.8")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0")
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.kotlinx.serialization.json)
 
 //expo player with media
-    implementation("androidx.media3:media3-exoplayer:1.5.1")
-    implementation("androidx.media3:media3-ui:1.5.1")
-    implementation("androidx.media3:media3-common:1.5.1")
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.ui)
+    implementation(libs.androidx.media3.common)
 
     //youtube video player
-    implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.1")
+    implementation(libs.core)
 
 }
