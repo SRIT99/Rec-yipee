@@ -17,7 +17,7 @@ interface SearchApiService {
     //https://www.themealdb.com/api/json/v1/1/search.php?s=chicken
 
 
-    //https://www.themealdb.com/api/json/v1/1/lookup.php?s=chicken
+    //https://www.themealdb.com/api/json/v1/1/lookup.php?i=chicken
     @GET("api/json/v1/1/lookup.php")
     suspend fun getRecipieDetails(
         @Query("i") i:String
