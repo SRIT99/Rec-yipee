@@ -4,7 +4,7 @@ import com.androidsrit.search.domain.model.Recipie
 import com.androidsrit.search.domain.model.RecipieDetails
 
 interface SearchRepository {
-    suspend fun getRecipies():List<Recipie>
+    suspend fun getRecipies():Result<List<Recipie>>
 
-    suspend fun getRecipieDetails(id:String): RecipieDetails
+    suspend fun getRecipieDetails(id:String): Result<RecipieDetails>
 }
