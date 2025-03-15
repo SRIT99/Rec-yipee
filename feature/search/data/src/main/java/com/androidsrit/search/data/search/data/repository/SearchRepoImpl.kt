@@ -9,12 +9,12 @@ import com.androidsrit.search.domain.repository.SearchRepository
 class SearchRepoImpl(
     private val searchApiService: SearchApiService
 ) : SearchRepository {
-    override suspend fun getRecipies(): Result<List<Recipie>> {
+    override suspend fun getRecipies(s: String): Result<List<Recipie>> {
         val response = searchApiService.getRecipies(s)
        return if(response.isSuccessful){
            response.body()?.meals?.let {
                Result.success(it.toDomain())
-           }?:Result.failure(Exception("No data found"))
+           }?: kotlin.run { Result.failure(Exception("No data found")) }
 
         }else{
             Result.failure(Exception(response.errorBody().toString()))
@@ -23,6 +23,19 @@ class SearchRepoImpl(
 
 
     override suspend fun getRecipieDetails(id:String): Result<RecipieDetails> {
+        val response = searchApiService.getRecipieDetails(id)
+        if (response.isSuccessful){
+            response.body()?.meals?.let{
+                if(it.isNotEmpty()){
+                        it.toDomain()
+                }else{
+                    Result.failure(Exception("No data found"))
+                }
+                Result.success()
+            }?:Result.failure(Exception("No data found"))
+        }else{
+            Result.failure(Exception("can't get your request from the server"))
+        }
         TODO()
     }
 }
